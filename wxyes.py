@@ -9,9 +9,7 @@ except KeyError:
     exit(0)
 friend = bot.friends().search(input('请输入朋友姓名：'))[0]
 while True:
-    try:
-        friend.send("ॣ ॣ ॣ")
-    except AttributeError:
+    if not hasattr(friend, 'send'):
         print('搜不到朋友！')
     else:
         break
